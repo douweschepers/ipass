@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <link link rel="stylesheet" type="text/css" href="projecten.css">
+  </head>
+  <body>
+    <img src="logo.jpg" class="muis"style="width:100px;height:50px;"onclick="reloadHome()">
+    <img src="warehouse.jpg" class="muis" style="width:100%;height:200px;" onclick="reloadHome()">
+    <h2 class="kop">Huidige projecten</h2>
+    <ul>
+	  <li><a href="persoonsgegevens.html">Persoonsgegevens</a></li>
+	  <li><a href="projecten.html">Projecten</a></li>
+	  <li><a href="maps.html">Maps</a></li>
+	  <li><a href="#about">Project afronden</a></li>
+	  <li><a href="#verwijderen" id="verw" class="edit-input">Verwijderen medewerkers</a></li>
+	</ul>
+   
+    <form>
+    <input type="text" id="zoek" onkeyup="filter()" placeholder="Zoeken...">
+	 <select id="optie">
+		  <option value=0>Projectnaam</option>
+		  <option value=1>Straatnaam</option>
+		  <option value=2>Huisnummer</option>
+		  <option value=3>Telefoonnummer</option>
+		  <option value=4>Type</option>
+		  <option value=5>Segment</option>
+		  <option value=5>Solution</option>
+		  <option value=5>Begindatum</option>
+	</select>
+	</form>
+    <div id="projecten" class="gegevens">
+		<table id="projectInfo" >
+		 <tr>
+		 	<th align="right" class="letter">Projectnaam</th>
+			<th align="left" class="letter">Straatnaam</th>
+			<th align="left" class="letter">Huisnummer</th>
+			<th align="left" class="letter">Telefoonnummer</th>
+			<th align="left" class="letter">Type</th>
+			<th align="left" class="letter">Segment</th>
+			<th align="left" class="letter">Solution</th>
+			<th align="left" class="letter">Begindatum</th>
+			
+		 </tr>
+		 </table>
+	 </div>
+	 <button id="nieuwProject" class="knop">Nieuw project</button>
+	 <form id="newProject">
+	 	<input type="text" placeholder="project id..." id="project_id" class="formProject" name="project_id"/>
+ 	 	<input type="text" placeholder="Huisnummer. .." id="huisnr" class="formProject" name="huisnr" />
+		<input type="text" placeholder="Straatnaam..." id="straatnaam" class="formProject" name="straatnaam" />
+		<select id="segment" class="formProject">
+		  <option value="Automotive">Automotive</option>
+		  <option value="High tech/ electronics">High tech/ electronics</option>
+		  <option value="Refrigerated and frozen goods">Refrigerated and frozen goods</option>
+		  <option value="Consumer goods (non-food)">Consumer goods (non-food)</option>
+		  <option value="Healthcare / Pharmaceuticals">Healthcare / Pharmaceuticals</option>
+		  <option value="Fashion / apparel /footwear">Fashion / apparel /footwear</option>
+		  <option value="Office supplies">Office supplies</option>
+		  <option value="Do-it-yourself">Do-it-yourself</option>
+		  <option value="Industrial products">Industrial products</option>
+		  <option value="Chemicals">Chemicals</option>
+		  <option value="Home decoration">Home decoration</option>
+		</select>
+		<select id="type" class="formProject">
+		  <option value="Manufacturing">Manufacturing</option>
+		  <option value="Third party">Third party</option>
+		  <option value="Wholesale/distributor">Wholesale/distributor</option>
+		  <option value="Retail">Retail</option>
+		  <option value="Direct to consumer / e-commerce">Direct to consumer / e-commerce</option>
+		  <option value="Spare parts">Spare parts</option>
+		</select>
+		<select id="solution" class="formProject">
+		  <option value="WMS">WMS</option>
+		  <option value="Apps">Apps</option>
+		  <option value="Services">Services</option>
+		</select>
+		<input type="text" placeholder="telefoonnummer..." id="telnr" class="formProject" name="telnr" />
+		<input type="text" placeholder="Medewerkers ID..." id="med_id" class="formProject" name="med_id" />
+		
+	 	<input type="date" id="begindatum" class="formProject" name="begindatum">
+		<input type="text" placeholder="projectnaam..." id="projectnaam" class="formProject" name="projectnaam" />
+	 	<input type="text" placeholder="Status..." id="status" class="formProject" name="status" />
+	 	
+	 </form>
+	 <button id="nieuwProjectOpslaan" class="formProject">Opslaan</button>
+		<button id="nieuwProjectAnnuleren"class="formProject">Annuleren</button>
+    
+     <script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
+  	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+   	<script src="projecten.js"
+    src="https://code.jquery.com/jquery-1.10.2.js"
+    ></script>
+ </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <link link rel="stylesheet" type="text/css" href="maps.css">
+  </head>
+  <body>
+    <img src="logo.jpg" class="muis" style="width:100px;height:50px;" onclick="reloadHome()">
+    <img src="warehouse.jpg" class="img" style="width:100%;height:200px;" onclick="reloadHome()">
+    <h2 class="kop">Maps</h2>
+    <ul>
+	  <li><a href="persoonsgegevens.html">Persoonsgegevens</a></li>
+	  <li><a href="projecten.html">Projecten</a></li>
+	  <li><a href="maps.html">Maps</a></li>
+	  <li><a href="#about">Project afronden</a></li>
+	  <li><a href="#verwijderen" id="verw" class="edit-input">Verwijderen medewerkers</a></li>
+	</ul>
+	
+    <div id="map" ></div>
+    <script src="maps.js"
+    src="https://code.jquery.com/jquery-1.10.2.js"
+    ></script>
+      
+      <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8vk5ebkZxvdlC560JXhPBnJOrTtn6EtA&callback=loadMap"></script>
+  </body>
+</html>

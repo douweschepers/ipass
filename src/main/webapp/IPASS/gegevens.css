@@ -1,0 +1,46 @@
+.gegevens{
+	padding-left:200px;
+}
+.rows{
+	padding-left:200px;
+}
+.edit-input{
+	 display:none;
+}
+
+div>p>label{
+	width:80%;
+	float:right;
+}
+
+ul {
+	float:left;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    height: 500px; /* Full height */
+    position:auto; /* Make it stick, even on scroll */
+    overflow: hidden; /* Enable scrolling if the sidenav has too much content */
+}
+li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color on hover */
+li a:hover {
+    background-color: #555;
+    color: white;
+}
+
+.muis:hover{
+	color:white;
+	cursor:pointer;
+	
+}
+.kop{
+    text-align: center;
+}
