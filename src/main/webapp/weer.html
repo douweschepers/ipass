@@ -1,0 +1,49 @@
+<head>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<link rel="stylesheet" type="text/css" href="weer.css" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	 <div id="frame" class="container">	 
+	 
+	 <div id="myLocation" class="item-a">
+	 <div id="kop"><H2>Mijn locatie</H2></div>
+	 <p>Landcode <label id="code"></label></p>
+	 <p>Land <label id="land"></label></p>
+	 <p>Regio <label id="regio"></label></p>
+	 <p>Stad <label id="stad" class="stad"></label></p>
+	 <p>Postcode <label id="postcode"></label></p>
+	 <p>Lattitude <label id="lat"></label></p>
+	 <p>Longitude <label id="long"></label></p>
+	 <p>IP adres <label id="ip"></label></p>
+	 </div>
+	 
+	 
+	 <div id="weatherInfo" class="item-b">
+	 <h2><div id="kop2"></div></h2>
+	 <p >Temperatuur <label id="temp" class="tab"></label></p>
+	 <p >Luchtvochtigheid <label id="vocht" class="tab"></label></p>
+	 <p >Windsnelheid <label id="snelheid" class="tab"></label></p>
+	 <p >Windrichting <label id="richting" class="tab"></label></p>
+	 <p >Zonsopgang <label id="opgang" class="tab"></label></p>
+	 <p >Zonsondergang <label id="ondergang" class="tab"></label></p>
+	 </div>
+
+	 
+	 <div id="countryList" class="kleur">
+	 <h2>Beschikbare vakantiebestemmingen</h2>
+		<table id="landen" style="overflow-x: auto">
+		 <tr>
+		 	<th align="left" class="letter">Land</th>
+		 	<th align="left" class="letter">Hoofdstad</th>
+			<th align="left" class="letter">Regio</th>
+			<th align="left" class="letter">Oppervlakte</th>
+			<th align="left" class="letter">Inwoners</th>
+		 </tr>
+		 </table>
+	 </div>
+	 </div>
+	
+	 <table id="display"></table>
+	<script src="weer.js" src="https://code.jquery.com/jquery-1.10.2.js">window.onload = initPage;</script>
+</body>

@@ -11,11 +11,14 @@ import javax.json.JsonObjectBuilder;
 import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.Response;
 
+import nl.hu.v1wac.firstapp.model.Medewerker;
 import nl.hu.v1wac.firstapp.model.Project;
 
 @Path("/project")
@@ -116,5 +119,23 @@ public class ProjectResource {
 	            return Response.status(Response.Status.FOUND).build();
  	       }
 	    }
+	    @PUT
+		@Path("{id}")
+		@Produces("application/json")
+		public Response updateProject(@PathParam("id") int id,
+			@FormParam("med_id") int med_id) {
+			
+			ProjectService service = ProjectServiceProvider.getProjectService();
+			Project p = service.getProjectByID(id);	
+			
+			if(p != null) {
+				p.setMedewerkersID(med_id);
+				String a = projectToJson(service.update(p)).build().toString();
+				return Response.ok(a).build();
+			}
+			
+			throw new WebApplicationException("Country not found!");
+			
+		}
 }
 

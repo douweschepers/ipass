@@ -1,0 +1,42 @@
+<!DOCTYPEHTML>
+<html>
+<head>
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<script src="landen.js" src="https://code.jquery.com/jquery-1.10.2.js">window.onload = loadCountries;</script>
+	<link rel="stylesheet" type="text/css" href="landen.css" />
+</head>
+	 <title>Landen</title>
+	 <body>
+	 <form>
+	 <input type="text" id="zoek" onkeyup="filter()" placeholder="Zoek landcodes...">
+	 <select id="optie">
+		  <option value=0>naam</option>
+		  <option value=1>Hoofdstad</option>
+		  <option value=2>Code</option>
+		  <option value=3>Regio</option>
+		  <option value=4>Oppervlakte</option>
+		  <option value=5>Inwoners</option>
+	</select>
+	 </form>
+	 <input type="button" id="naam" value="naam">
+	 <input type="button" id="hoofdstad" value="hoofdstad">
+	 <input type="button" id="code" value="code">
+	 <input type="button" id="regio" value="regio">
+	 <input type="button" id="opp"value="oppervlakte">
+	 <input type="button" id="inwoners"value="inwoners">
+	 
+		<div id=inhoud>
+		<table id="landenInhoud">
+		<tr>
+			<th align="left">Naam</th>
+			<th align="left">Hoofdstad</th>
+			<th align="left">Code</th>
+			<th align="left">Regio</th>
+			<th align="left">Oppervlakte</th>
+			<th align="left">Inwoners</th>
+			<th align="left" id="verwijderen">verwijderen </th>
+		</tr>
+		</table>
+		</div>
+	 </body>
+</html>

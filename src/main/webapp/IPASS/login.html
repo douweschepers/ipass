@@ -2,14 +2,20 @@
 <html>
   <head>
   <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <link link rel="stylesheet" type="text/css" href="login.css">
   </head>
   <body>
-    <label><b>Gebruikersnaam</b></label>
-    <input type="text" placeholder="Voer gebruikersnaam in..." id="username" required>
+  <div>
+   <img src="logo.jpg" class="foto">
+  <ul>
+    <li><label><b>Gebruikersnaam</b></label>
+    <input type="text" class="logingegevens1"placeholder="Voer gebruikersnaam in..." id="username" required></li>
 
-    <label><b>Wachtwoord</b></label>
-    <input type="password" placeholder="Voer wachtwoord in..." id="password" required>
-    
+    <li><label><b>Wachtwoord</b></label>
+    <input type="password" class="logingegevens2"placeholder="Voer wachtwoord in..." id="password" required></li>
+   </ul>
   	<button type="submit" onclick="login()">Login</button>
+  	
+  </div>
    <script src="login.js"></script>
  </body>

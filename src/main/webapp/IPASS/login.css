@@ -1,0 +1,27 @@
+div{
+    position:fixed;
+    top: 30%;
+    left: 45%;
+    width:20em;
+    height:10em;
+    margin-top: -5em; /*set to a negative number 1/2 of your height*/
+    margin-left: -10em; /*set to a negative number 1/2 of your width*/
+    border: 1px solid #ccc;
+    padding: 100px 50px 10px 45px;
+}
+.logingegevens1{
+	margin-left:20px;
+}
+.logingegevens2{
+	margin-left:48px;
+}
+ul{
+	
+    list-style-type: none;
+    padding: 0px 0px 0px 0px;
+    margin: 0px;
+}
+.foto{
+	width:100px;
+	height:50px:
+}

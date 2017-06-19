@@ -1,0 +1,21 @@
+<HTML>
+<title> hoi2</title>
+<body>
+<label id="invoer"></label>
+
+<script type="text/javascript">
+window.addEventListener('storage', function(event) {  
+	console.log("hoi");
+    console.log("changed key: " + event.key);
+    console.log("old value  : " + event.newValue);
+    console.log("old value  : " + event.oldValue);
+    console.log("storage    : " + event.storageArea);
+    console.log("url        : " + event.url);
+
+    document.getElementById("invoer").innerHTML = event.newValue;
+});
+
+
+</script>
+</body>
+</HTML>

@@ -4,6 +4,7 @@ import javax.json.Json;
 import javax.json.JsonArray;
 import javax.json.JsonArrayBuilder;
 import javax.json.JsonObjectBuilder;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.PUT;
@@ -14,6 +15,7 @@ import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.Response;
 
 import nl.hu.v1wac.firstapp.model.Medewerker;
+import nl.hu.v1wac.firstapp.model.WorldService;
 
 @Path("/medewerker")
 public class MedewerkerResource {
@@ -77,7 +79,7 @@ public class MedewerkerResource {
 	@PUT
 	@Path("{id}")
 	@Produces("application/json")
-	public Response updateCustomer(@PathParam("id") int id,
+	public Response updateMedewerker(@PathParam("id") int id,
 		@FormParam("voornaam") String voornaam,
 		@FormParam("achternaam") String achternaam,
 		@FormParam("straatnaam") String straatnaam,
@@ -98,6 +100,12 @@ public class MedewerkerResource {
 		
 		throw new WebApplicationException("Country not found!");
 		
+	}
+	@DELETE
+	@Path("{id}")
+	public void deleteMedewerker(@PathParam("id") int id) {	
+		MedewerkerService service = MedewerkerServiceProvider.getMedewerkerService();
+		service.deleteMedewerker(id);
 	}
 
 }

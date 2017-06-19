@@ -1,5 +1,6 @@
 function projecten(){
 	med_id = localStorage.getItem("medewerkers_id");
+	console.log(med_id);
 	lijst = [];
 	var select = document.getElementById("collapse");
 	$.getJSON("http://localhost:4711/firstapp/restservices/project", function(data) {
@@ -15,9 +16,6 @@ function projecten(){
 						'<td>' + value_pjct.solution + '</td>'+ 
 						'<td>' + value_pjct.begindatum + '</td>'+ 
 						'</tr>');
-			}
-			else{
-				document.getElementById('projecten').innerHTML = 'Geen projecten gevonden!';
 			}
 		});
 	});
@@ -60,6 +58,9 @@ function projecten(){
 		window.open("http://localhost:4711/firstapp/IPASS/projecten.html","_self");
 	});
 	checkAdmin();
+	 $('#loguit').click(function(){
+		 uitloggen();
+	 })
 }
 function reloadHome(){
 	window.location = "maps.html";
@@ -90,6 +91,10 @@ function checkAdmin(){
 	if(rol== "admin"){
 		$('#verw').show();
 	};
+}
+function uitloggen(){
+	localStorage.clear();
+	window.open("http://localhost:4711/firstapp/IPASS/login.html","_self");
 }
 
 

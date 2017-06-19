@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-
+import nl.hu.v1wac.firstapp.model.Medewerker;
 import nl.hu.v1wac.firstapp.model.Project;
 
 public class ProjectDAO extends BaseDAO{
@@ -119,5 +119,16 @@ public class ProjectDAO extends BaseDAO{
 		}
 		return newProject;
 		}
+	public Project update(Project project){
+		String query = "update project set medewerkers_id="+project.getMedewerkersID()+";";
+		try (Connection con = super.getConnection()){
+            Statement stmt = con.createStatement();
+            stmt.executeUpdate(query);
+        } catch (SQLException e) {
+        	System.out.println("DB connection: failed");
+            e.printStackTrace();
+        }
+         return findByID(project.getProjectID());
+    }
 }
 

@@ -1,0 +1,59 @@
+body{
+    background-color: #D7D5CD;
+}
+H2{
+	color: white;
+	background-color:#A0998D;
+}
+.kleur{
+	background-color:#B1ADA5;
+	cursor:pointer;
+	
+	grid-column-start: 1;
+	grid-column-end: 3;
+	grid-row-start: row1-start;
+	grid-row-end: 3;
+}
+.letter{
+	 padding-right: 200px;
+}
+tr:hover {
+    color: white;
+}
+.stad:hover{
+	color:white;
+	cursor:pointer;
+}
+div>p{
+	width: 250px;
+}
+
+div>p>label{
+	width:50%;
+	float:right;
+}
+div#countryList{
+	 overflow-x: auto;
+}
+
+@media screen and (min-width: 750px) {
+ 
+.container{
+	display:grid;
+	grid-template-columns: 50% 50%;
+  	grid-template-rows:0px 300px;
+}
+.item-a {
+	grid-column-start: 1;
+	grid-column-end: 2;
+	grid-row-start: row1-start;
+	grid-row-end: 2;
+}
+.item-b{
+	grid-column-start: 2;
+	grid-column-end: 3;
+	grid-row-start: row1-start;
+	grid-row-end: 2
+	
+}
+}

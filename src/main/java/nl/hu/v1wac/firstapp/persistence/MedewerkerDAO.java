@@ -8,7 +8,9 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import nl.hu.v1wac.firstapp.model.Country;
 import nl.hu.v1wac.firstapp.model.Medewerker;
+import nl.hu.v1wac.firstapp.model.Project;
 
 public class MedewerkerDAO extends BaseDAO{
 	public List<Medewerker> findAll(){
@@ -81,6 +83,32 @@ public class MedewerkerDAO extends BaseDAO{
          
         return findByID(medewerker.getMedewerkerID());
     }
+	
+	public boolean delete(Medewerker medewerker){
+		boolean result = false;
+		boolean medewerkerExists = findByID(medewerker.getMedewerkerID()) != null;
+		
+		
+		if(medewerkerExists){
+			String queryUpdate = "update projects set medewerkers_id= null where medewerkers_id='" + medewerker.getMedewerkerID()+"'";   
+			String query= "delete from medewerkers where medewerkers_id = '"+medewerker.getMedewerkerID()+"'";
+		
+		try (Connection con = getConnection()) {
+			
+			Statement stmt = con.createStatement();
+			stmt.executeUpdate(queryUpdate);
+			System.out.println("werkt");
+			stmt.executeUpdate(query);  // 1 row updated!
+			result = true;
+				
+			}
+		catch (SQLException sqle) {
+			sqle.printStackTrace();
+			result = false;
+		}
+		}
+		return result;
+	}
 		
 }
 

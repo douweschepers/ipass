@@ -1,13 +1,62 @@
 .gegevens{
 	padding-left:200px;
 }
+.projecten{
+	margin-left: 150px;
+	border: 2px solid grey;
+    border-radius: 8px;
+}
+.uitloggen{
+	float:right;
+	background-color:#1A64B8;
+	border:none;
+	color:white;
+	width:68px;
+	height:32px;
+	border-radius: 8px;
+	transition-duration: 0.4s;
+}
+.uitloggen:hover{
+	background-color:white;
+	color:#1A64B8;
+	cursor:pointer;
+	border: 2px solid #1A64B8;
+	
+}
+body{
+	background-color:F2EEED;
+}
+.border{
+	margin-left: 150px;
+	border: 2px solid grey;
+    border-radius: 8px;
+}
+
 .rows{
 	padding-left:200px;
 }
 .edit-input{
 	 display:none;
 }
-
+.aanpassen{
+	float:right;
+	background-color:#1A64B8;
+	border:none;
+	color:white;
+	width:80px;
+	height:32px;
+	margin:10px;
+	border-radius: 8px;
+	transition-duration: 0.4s;
+}
+.aanpassen:hover{
+	color:white;
+	cursor:pointer;
+	background-color:white;
+	color:#1A64B8;
+	cursor:pointer;
+	border: 2px solid #1A64B8;
+}
 div>p>label{
 	width:80%;
 	float:right;
@@ -22,6 +71,7 @@ ul {
     height: 500px; /* Full height */
     position:auto; /* Make it stick, even on scroll */
     overflow: hidden; /* Enable scrolling if the sidenav has too much content */
+    border-radius: 8px;
 }
 li a {
     display: block;
@@ -32,8 +82,11 @@ li a {
 
 /* Change the link color on hover */
 li a:hover {
-    background-color: #555;
+    background-color: #1A64B8;
     color: white;
+}
+li a:active {
+    background: #1A64B8;
 }
 
 .muis:hover{

@@ -6,6 +6,7 @@
   </head>
   <body>
     <img src="logo.jpg" class="muis"style="width:100px;height:50px;"onclick="reloadHome()">
+    <button id="loguit" class="uitloggen">Uitloggen</button>
     <img src="warehouse.jpg" class="muis" style="width:100%;height:200px;" onclick="reloadHome()">
     <h2 class="kop">Huidige projecten</h2>
     <ul>
@@ -13,11 +14,12 @@
 	  <li><a href="projecten.html">Projecten</a></li>
 	  <li><a href="maps.html">Maps</a></li>
 	  <li><a href="#about">Project afronden</a></li>
-	  <li><a href="#verwijderen" id="verw" class="edit-input">Verwijderen medewerkers</a></li>
+	  <li><a href="verwijderen.html" id="verw" class="edit-input">Verwijderen medewerkers</a></li>
 	</ul>
    
     <form>
     <input type="text" id="zoek" onkeyup="filter()" placeholder="Zoeken...">
+    <button id="nieuwProject" class="newProject">Nieuw project</button>
 	 <select id="optie">
 		  <option value=0>Projectnaam</option>
 		  <option value=1>Straatnaam</option>
@@ -44,7 +46,7 @@
 		 </tr>
 		 </table>
 	 </div>
-	 <button id="nieuwProject" class="knop">Nieuw project</button>
+	 
 	 <form id="newProject">
 	 	<input type="text" placeholder="project id..." id="project_id" class="formProject" name="project_id"/>
  	 	<input type="text" placeholder="Huisnummer. .." id="huisnr" class="formProject" name="huisnr" />

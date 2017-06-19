@@ -7,22 +7,24 @@
   <body>
   	<div class="fotos">
     <img src="logo.jpg" class="muis"style="width:100px;height:50px;"onclick="reloadHome()">
+    <button id="loguit" class="uitloggen">Uitloggen</button>
     <img src="warehouse.jpg" class="muis" style="width:100%;height:200px;" onclick="reloadHome()">
     </div>
     <h2 class="kop">Persoonlijke gegevens</h2>
-    <ul>
+    <button id="aanpassen" class="aanpassen">Aanpassen</button>
+    <ul class="menu">
 	  <li><a href="persoonsgegevens.html">Persoonsgegevens</a></li>
 	  <li><a href="projecten.html">Projecten</a></li>
 	  <li><a href="maps.html">Maps</a></li>
 	  <li><a href="#about">Project afronden</a></li>
-	  <li><a href="#verwijderen" id="verw" class="edit-input">Verwijderen medewerkers</a></li>
+	  <li><a href="verwijderen.html" id="verw" class="edit-input">Verwijderen medewerkers</a></li>
 	</ul>
 	
         <script src="maps.js"
     src="https://code.jquery.com/jquery-1.10.2.js"
     ></script>
     
-    <div class="gegevens">
+   <div class="border">
     <form id="updateCustomerForm">
 	 <p>Voornaam: <label id="voornaam"></label></p><input type="text" name="voornaam" class="edit-input" />
 	 <p>Achternaam: <label id="achternaam"></label></p><input type="text" name="achternaam" class="edit-input" />
@@ -35,9 +37,8 @@
    
    <button id="opslaan" class="edit-input">Opslaan</button>
    <button id="annuleren" class="edit-input">Annuleren</button>
-   <button id="aanpassen" class="aanpassen">Aanpassen</button>
-   	 <div id="projecten">
-	 <h2 class="kop">Huidige projecten:</h2>
+   <h2 class="kop">Huidige projecten:</h2>
+   	 <div class="projecten" id="projecten">
 		<table class="gegevens">
 		 <tr>
 		 	<th class="gegevens"></th>

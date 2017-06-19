@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+ <title>JavaScript Rekenmachine</title>
+	<head>
+	<link rel="stylesheet" type="text/css" href="rekenmachineCSS.css">
+	</head>
+		 <body>
+		<div id="frame" float="top">
+			<div id="display">0</div>
+			<button id="btn_7" onclick="addDigit('7')">7</button>
+			<button id="btn_8" onclick="addDigit('8')">8</button>
+			<button id="btn_9" onclick="addDigit('9')">9</button>
+			<button id="btn_div" onclick="Operate('/')">/</button>
+			<button id="btn_4" onclick="addDigit('4')">4</button>
+			<button id="btn_5" onclick="addDigit('5')">5</button>
+			<button id="btn_6" onclick="addDigit('6')">6</button>
+			<button id="btn_prod" onclick="Operate('*')">*</button>
+			<button id="btn_1" onclick="addDigit('1')">1</button>
+			<button id="btn_2" onclick="addDigit('2')">2</button>
+			<button id="btn_3" onclick="addDigit('3')">3</button>
+			<button id="btn_min" onclick="Operate('-')">-</button>
+			<button id="btn_clear" onclick="AllClear()">C</button>
+			<button id="btn_0" onclick="addDigit('0')">0</button>
+			<button id="btn_eq" onclick="uitrekenen()">=</button>
+			<button id="btn_plus" onclick="Operate('+')">+</button>
+		</div>
+		<script src="rekenmachine.js"></script>
+	 </body>
+</html>

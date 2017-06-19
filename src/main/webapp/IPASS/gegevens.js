@@ -22,9 +22,6 @@ function gegevens(){
 				$('#projecten').append('<tr id="rows'+index_pjct+'">' +
 						'<td>' + value_pjct.projectNaam + '</td>'+ 
 						'</tr>');
-				
-				
-				
 			}			
 		});
 	});
@@ -57,12 +54,20 @@ function gegevens(){
 	 window.open("http://localhost:4711/firstapp/IPASS/persoonsgegevens.html","_self");
  });
  checkAdmin()
+ 
+ $('#loguit').click(function(){
+	 uitloggen();
+ })
 }
 function checkAdmin(){
 	rol = localStorage.getItem("rol");
 	 if(rol== "admin"){
 			$('#verw').show();
 		};
+}
+function uitloggen(){
+	localStorage.clear();
+	window.open("http://localhost:4711/firstapp/IPASS/login.html","_self");
 }
 gegevens();
 

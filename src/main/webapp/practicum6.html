@@ -1,0 +1,15 @@
+<HTML>
+<title> hoi</title>
+<body>
+<input type="text" id="hoi" onkeyup="myFunction()">
+<a href="practicum62.html">klik hier voor de label pagina</a>
+<script>
+function myFunction(){
+	var invoer = document.getElementById("hoi");
+	window.localStorage.setItem("username", invoer.value);
+	console.log(invoer.value);
+	console.log(window.localStorage);
+};
+</script>
+</body>
+</HTML>

@@ -3,6 +3,7 @@ package nl.hu.v1wac.firstapp.webservices;
 import java.text.ParseException;
 import java.util.List;
 
+import nl.hu.v1wac.firstapp.model.Medewerker;
 import nl.hu.v1wac.firstapp.model.Project;
 import nl.hu.v1wac.firstapp.persistence.ProjectDAO;
 
@@ -25,5 +26,9 @@ public class ProjectService {
 	}
 	public Project addProject(Project project) throws ParseException{
 		return ProjectDAO.save(project);
+	}
+	public Project update(Project project){
+		Project result = ProjectDAO.update(project);
+		return result;
 	}
 }

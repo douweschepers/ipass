@@ -4,15 +4,45 @@
         height: 400px;
         background-color: grey;
       }
+.edit-input{
+	display:none;
+}
+body{
+	background-color:F2EEED;
+}
+.border{
+	margin-left: 150px;
+	border: 2px solid grey;
+    border-radius: 8px;
+}
+
+.uitloggen{
+	float:right;
+	background-color:#1A64B8;
+	border:none;
+	color:white;
+	width:68px;
+	height:32px;
+	border-radius: 8px;
+	transition-duration: 0.4s;
+}
+.uitloggen:hover{
+	background-color:white;
+	color:#1A64B8;
+	cursor:pointer;
+	border: 2px solid #1A64B8;
+	
+}
 ul {
 	float:left;
     list-style-type: none;
     margin: 0;
     padding: 0;
     width: auto;
-    height: 100%; /* Full height */
+    height: 500px; /* Full height */
     position:auto; /* Make it stick, even on scroll */
-    overflow: auto; /* Enable scrolling if the sidenav has too much content */
+    overflow: hidden; /* Enable scrolling if the sidenav has too much content */
+    border-radius: 8px;
 }
 li a {
     display: block;
@@ -23,7 +53,7 @@ li a {
 
 /* Change the link color on hover */
 li a:hover {
-    background-color: #555;
+    background-color: #1A64B8;
     color: white;
 }
 
@@ -36,4 +66,21 @@ li a:hover {
 }
 .img{
 	float:right;
+}
+.pins{
+	background-color:#1A64B8;
+	border:none;
+	color:white;
+	width:90px;
+	height:40px;
+	border-radius: 8px;
+	transition-duration: 0.4s;
+}
+.pins:hover{
+	background-color:white;
+	width:100px;
+	color:#1A64B8;
+	cursor:pointer;
+	border: 2px solid #1A64B8;
+	
 }
