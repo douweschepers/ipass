@@ -106,9 +106,9 @@ public class MedewerkerDAO extends BaseDAO{
 		}
 		return result;
 	}
-	public String findRolForUsernameAndPassword(String username, String password) {
+	/*public String findRolForUsernameAndPassword(String username, String password) {
 		 String rol = null;
-		 String query = "SELECT rol FROM medewerkers WHERE username = ? AND password = ?";
+		 String query = "SELECT rol FROM medewerkers WHERE gebruikersnaam = ? AND wachtwoord = ?";
 
 		 try (Connection con = super.getConnection()) {
 
@@ -119,14 +119,13 @@ public class MedewerkerDAO extends BaseDAO{
 		 ResultSet rs = pstmt.executeQuery();
 		 if (rs.next())
 		 rol = rs.getString("rol");
-
 		 } catch (SQLException sqle) {
 		 sqle.printStackTrace();
 		 }
 
 		 return rol;
 		 }
-
+*/
 		
 }
 

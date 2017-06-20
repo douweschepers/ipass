@@ -41,7 +41,6 @@ public class ProjectResource {
     }	
 	
 		@GET
-		@RolesAllowed({"medewerker", "admin"})
 		@Produces("application/json")
 		public String getProject(){
 			
@@ -70,7 +69,6 @@ public class ProjectResource {
 		
 		@GET
 		@Path("{id}")
-		@RolesAllowed({"medewerker", "admin"})
 		@Produces("application/json")
 		public String getProjectByCode(@PathParam("id") int id){
 			
@@ -95,7 +93,6 @@ public class ProjectResource {
 		}
 		
 	    @POST
-	    @RolesAllowed({"medewerker", "admin"})
 	    @Path("/newProject")
 	    public Response addCountry(@FormParam("project_id") int project_id,
 	    		@FormParam("huisnr") int huisnr,
@@ -125,7 +122,6 @@ public class ProjectResource {
 	    }
 	    @PUT
 		@Path("{id}")
-	    @RolesAllowed({"medewerker", "admin"})
 		@Produces("application/json")
 		public Response updateProject(@PathParam("id") int id,
 			@FormParam("med_id") int med_id) {

@@ -2,10 +2,11 @@ function reloadHome(){
 	window.location = "maps.html";
 }
 function gegevens(){
+	console.log(localStorage)
 	med_id = localStorage.getItem("medewerkers_id");
+	console.log(med_id);
 	lijst = [];
 	var select = document.getElementById("huidige_projecten");
-	
 	$.getJSON("http://localhost:4711/firstapp/restservices/medewerker/"+med_id, function(data) {
 		$(data).each(function( index_med , value_med ) {
 			document.querySelector('#voornaam').innerHTML = value_med.voornaam;
@@ -40,11 +41,6 @@ function gegevens(){
 	 var uri = "/firstapp/restservices/medewerker/" + med_id;
 	 $.ajax(uri, {
 		 type: "put",
-		 beforeSend: function(xhr){
-			 var token = window.sessionStorage.getItem("sessionToken");
-			 xhr.setRequestHeader( 'Authorization', 'Bearer ' + token);
-
-		 },
 		 data: $("#updateCustomerForm").serialize(),
 		 success: function() {
 			 console.log("Customer saved!");
