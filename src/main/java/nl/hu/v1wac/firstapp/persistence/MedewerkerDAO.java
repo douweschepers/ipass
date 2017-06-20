@@ -7,10 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-
-import nl.hu.v1wac.firstapp.model.Country;
 import nl.hu.v1wac.firstapp.model.Medewerker;
-import nl.hu.v1wac.firstapp.model.Project;
 
 public class MedewerkerDAO extends BaseDAO{
 	public List<Medewerker> findAll(){
@@ -109,6 +106,27 @@ public class MedewerkerDAO extends BaseDAO{
 		}
 		return result;
 	}
+	public String findRolForUsernameAndPassword(String username, String password) {
+		 String rol = null;
+		 String query = "SELECT rol FROM medewerkers WHERE username = ? AND password = ?";
+
+		 try (Connection con = super.getConnection()) {
+
+		 PreparedStatement pstmt = con.prepareStatement(query);
+		 pstmt.setString(1, username);
+		 pstmt.setString(2, password);
+
+		 ResultSet rs = pstmt.executeQuery();
+		 if (rs.next())
+		 rol = rs.getString("rol");
+
+		 } catch (SQLException sqle) {
+		 sqle.printStackTrace();
+		 }
+
+		 return rol;
+		 }
+
 		
 }
 

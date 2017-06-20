@@ -7,14 +7,14 @@
   <body>
   <div>
    <img src="logo.jpg" class="foto">
-  <ul>
-    <li><label><b>Gebruikersnaam</b></label>
-    <input type="text" class="logingegevens1"placeholder="Voer gebruikersnaam in..." id="username" required></li>
-
-    <li><label><b>Wachtwoord</b></label>
-    <input type="password" class="logingegevens2"placeholder="Voer wachtwoord in..." id="password" required></li>
-   </ul>
-  	<button type="submit" onclick="login()">Login</button>
+   
+   <form id="loginform">
+    <input type="text" name="username" class="logingegevens1"placeholder="Voer gebruikersnaam in..." id="username" required>
+    <input type="password" name="password" class="logingegevens2"placeholder="Voer wachtwoord in..." id="password" required>
+   
+   <button type="button" value="login" id="login">Login</button>
+   </form>
+  	
   	
   </div>
    <script src="login.js"></script>

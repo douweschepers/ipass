@@ -40,6 +40,11 @@ function gegevens(){
 	 var uri = "/firstapp/restservices/medewerker/" + med_id;
 	 $.ajax(uri, {
 		 type: "put",
+		 beforeSend: function(xhr){
+			 var token = window.sessionStorage.getItem("sessionToken");
+			 xhr.setRequestHeader( 'Authorization', 'Bearer ' + token);
+
+		 },
 		 data: $("#updateCustomerForm").serialize(),
 		 success: function() {
 			 console.log("Customer saved!");
