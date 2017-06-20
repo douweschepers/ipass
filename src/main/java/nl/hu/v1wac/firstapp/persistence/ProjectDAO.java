@@ -120,7 +120,18 @@ public class ProjectDAO extends BaseDAO{
 		return newProject;
 		}
 	public Project update(Project project){
-		String query = "update project set medewerkers_id="+project.getMedewerkersID()+";";
+		String query = "update projects set medewerkers_id="+project.getMedewerkersID()+";";
+		try (Connection con = super.getConnection()){
+            Statement stmt = con.createStatement();
+            stmt.executeUpdate(query);
+        } catch (SQLException e) {
+        	System.out.println("DB connection: failed");
+            e.printStackTrace();
+        }
+         return findByID(project.getProjectID());
+    }
+	public Project updateStatus(Project project){
+		String query = "update projects set status ='" + "afgerond' where project_id=" + project.getProjectID()+";" ;
 		try (Connection con = super.getConnection()){
             Statement stmt = con.createStatement();
             stmt.executeUpdate(query);

@@ -17,7 +17,6 @@ function loadMap(){
 }
 function codeAddress(longlat,lijst) {
 	var contentString= undefined;
-	console.log(lijst);
 	for(var i =0; i< lijst.length;i++){
 		contentString = lijst[i].toString();
 	}

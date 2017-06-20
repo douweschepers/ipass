@@ -31,4 +31,8 @@ public class ProjectService {
 		Project result = ProjectDAO.update(project);
 		return result;
 	}
+	public Project updateStatus(Project project){
+		Project result = ProjectDAO.updateStatus(project);
+		return result;
+	}
 }

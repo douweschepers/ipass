@@ -1,6 +1,5 @@
 function projecten(){
 	med_id = localStorage.getItem("medewerkers_id");
-	console.log(med_id);
 	lijst = [];
 	var select = document.getElementById("collapse");
 	$.getJSON("http://localhost:4711/firstapp/restservices/project", function(data) {
@@ -30,6 +29,7 @@ function projecten(){
 	        dad.find('#begindatum').show().focus();
 	        dad.find('#nieuwProjectOpslaan').show().focus();
 	        dad.find('#nieuwProjectAnnuleren').show().focus();
+	        dad.find('#status').show().focus();
 	});
 	
 	$("#nieuwProjectOpslaan").click(function() {
@@ -69,17 +69,16 @@ function reloadHome(){
 	window.location = "maps.html";
 }
 function filter(){
-	console.log("filter");
-	  var input, filter, table, tr, td, i;
+	  var input, filter1, table, tr, td, i;
 	  input = document.getElementById("zoek");
-	  filter = input.value.toUpperCase();
+	  filter1 = input.value.toUpperCase();
 	  table = document.getElementById("projectInfo");
 	  tr = table.getElementsByTagName("tr");
 	  var nummer = $("#optie").val();
 	  for (i = 0; i < tr.length; i++) {
 	    td = tr[i].getElementsByTagName("td")[nummer];
 	    if (td) {
-	      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+	      if (td.innerHTML.toUpperCase().indexOf(filter1) > -1) {
 	        tr[i].style.display = "";
 	      } else {
 	        tr[i].style.display = "none";

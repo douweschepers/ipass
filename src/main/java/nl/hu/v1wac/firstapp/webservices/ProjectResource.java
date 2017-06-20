@@ -94,7 +94,7 @@ public class ProjectResource {
 		
 	    @POST
 	    @Path("/newProject")
-	    public Response addCountry(@FormParam("project_id") int project_id,
+	    public Response addProject(@FormParam("project_id") int project_id,
 	    		@FormParam("huisnr") int huisnr,
 	    		@FormParam("medewerkers_id") int medewerkers_id,
 	    		@FormParam("projectnaam") String projectnaam,
@@ -132,6 +132,24 @@ public class ProjectResource {
 			if(p != null) {
 				p.setMedewerkersID(med_id);
 				String a = projectToJson(service.update(p)).build().toString();
+				return Response.ok(a).build();
+			}
+			
+			throw new WebApplicationException("Country not found!");
+			
+		}
+	    @PUT
+		@Path("/status/{id}")
+		@Produces("application/json")
+		public Response updateProjectStatus(@PathParam("id") int id)
+					{
+			
+			ProjectService service = ProjectServiceProvider.getProjectService();
+			Project p = service.getProjectByID(id);	
+			
+			if(p != null) {
+				p.setStatus("afgerond");
+				String a = projectToJson(service.updateStatus(p)).build().toString();
 				return Response.ok(a).build();
 			}
 			

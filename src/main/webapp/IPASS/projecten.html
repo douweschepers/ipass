@@ -13,7 +13,7 @@
 	  <li><a href="persoonsgegevens.html">Persoonsgegevens</a></li>
 	  <li><a href="projecten.html">Projecten</a></li>
 	  <li><a href="maps.html">Maps</a></li>
-	  <li><a href="#about">Project afronden</a></li>
+	  <li><a href="afronden.html">Project afronden</a></li>
 	  <li><a href="verwijderen.html" id="verw" class="edit-input">Verwijderen medewerkers</a></li>
 	</ul>
    <button id="nieuwProject" class="newProject">Nieuw project</button>
@@ -82,7 +82,10 @@
 		
 	 	<input type="date" id="begindatum" class="formProject" name="begindatum"><p>
 		<input type="text" placeholder="projectnaam..." id="projectnaam" class="formProject" name="projectnaam" /><p>
-	 	<input type="text" placeholder="Status..." id="status" class="formProject" name="status" /><p>
+	 	<select id="status" class="formProject">
+		  <option value="actief">Actief</option>
+		  <option value="afgerond">Afgerond</option>
+		</select><p>
 	 	
 	 	<button id="nieuwProjectOpslaan" class="formProject-button">Opslaan</button>
 		<button id="nieuwProjectAnnuleren"class="formProject-button">Annuleren</button>
