@@ -52,7 +52,7 @@ public class AuthenticationResource {
 		 return Response.status(Response.Status.UNAUTHORIZED).build();
 		 }
 	 }
-	 
+
 	 @GET
 	 @Path("/test")
 	 public String getTest(){
