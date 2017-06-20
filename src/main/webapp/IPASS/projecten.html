@@ -16,10 +16,10 @@
 	  <li><a href="#about">Project afronden</a></li>
 	  <li><a href="verwijderen.html" id="verw" class="edit-input">Verwijderen medewerkers</a></li>
 	</ul>
-   
+   <button id="nieuwProject" class="newProject">Nieuw project</button>
     <form>
     <input type="text" id="zoek" onkeyup="filter()" placeholder="Zoeken...">
-    <button id="nieuwProject" class="newProject">Nieuw project</button>
+    
 	 <select id="optie">
 		  <option value=0>Projectnaam</option>
 		  <option value=1>Straatnaam</option>
@@ -45,12 +45,12 @@
 			
 		 </tr>
 		 </table>
-	 </div>
-	 
-	 <form id="newProject">
-	 	<input type="text" placeholder="project id..." id="project_id" class="formProject" name="project_id"/>
- 	 	<input type="text" placeholder="Huisnummer. .." id="huisnr" class="formProject" name="huisnr" />
-		<input type="text" placeholder="Straatnaam..." id="straatnaam" class="formProject" name="straatnaam" />
+
+	
+	 <form><p>
+	 	<input type="text" placeholder="project id..." id="project_id" class="formProject" name="project_id"/><p>
+ 	 	<input type="text" placeholder="Huisnummer. .." id="huisnr" class="formProject" name="huisnr" /><p>
+		<input type="text" placeholder="Straatnaam..." id="straatnaam" class="formProject" name="straatnaam" /><p>
 		<select id="segment" class="formProject">
 		  <option value="Automotive">Automotive</option>
 		  <option value="High tech/ electronics">High tech/ electronics</option>
@@ -63,7 +63,7 @@
 		  <option value="Industrial products">Industrial products</option>
 		  <option value="Chemicals">Chemicals</option>
 		  <option value="Home decoration">Home decoration</option>
-		</select>
+		</select><p>
 		<select id="type" class="formProject">
 		  <option value="Manufacturing">Manufacturing</option>
 		  <option value="Third party">Third party</option>
@@ -71,22 +71,24 @@
 		  <option value="Retail">Retail</option>
 		  <option value="Direct to consumer / e-commerce">Direct to consumer / e-commerce</option>
 		  <option value="Spare parts">Spare parts</option>
-		</select>
+		</select><p>
 		<select id="solution" class="formProject">
 		  <option value="WMS">WMS</option>
 		  <option value="Apps">Apps</option>
 		  <option value="Services">Services</option>
-		</select>
-		<input type="text" placeholder="telefoonnummer..." id="telnr" class="formProject" name="telnr" />
-		<input type="text" placeholder="Medewerkers ID..." id="med_id" class="formProject" name="med_id" />
+		</select><p>
+		<input type="text" placeholder="telefoonnummer..." id="telnr" class="formProject" name="telnr" /><p>
+		<input type="text" placeholder="Medewerkers ID..." id="med_id" class="formProject" name="med_id" /><p>
 		
-	 	<input type="date" id="begindatum" class="formProject" name="begindatum">
-		<input type="text" placeholder="projectnaam..." id="projectnaam" class="formProject" name="projectnaam" />
-	 	<input type="text" placeholder="Status..." id="status" class="formProject" name="status" />
+	 	<input type="date" id="begindatum" class="formProject" name="begindatum"><p>
+		<input type="text" placeholder="projectnaam..." id="projectnaam" class="formProject" name="projectnaam" /><p>
+	 	<input type="text" placeholder="Status..." id="status" class="formProject" name="status" /><p>
 	 	
+	 	<button id="nieuwProjectOpslaan" class="formProject-button">Opslaan</button>
+		<button id="nieuwProjectAnnuleren"class="formProject-button">Annuleren</button>
 	 </form>
-	 <button id="nieuwProjectOpslaan" class="formProject">Opslaan</button>
-		<button id="nieuwProjectAnnuleren"class="formProject">Annuleren</button>
+	 </div>
+	
     
      <script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
   	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>

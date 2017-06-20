@@ -1,12 +1,17 @@
+body{
+	font-family: Verdana,sans-serif;
+}
 ul {
 	float:left;
     list-style-type: none;
     margin: 0;
     padding: 0;
     width: auto;
-    height: 500px; /* Full height */
+    height: auto; /* Full height */
     position:auto; /* Make it stick, even on scroll */
     overflow: auto; /* Enable scrolling if the sidenav has too much content */
+    border-radius: 8px;
+    border: 1px solid #1A64B8;
 }
 .uitloggen{
 	float:right;

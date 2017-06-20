@@ -21,15 +21,18 @@ function projecten(){
 	});
 	$('#nieuwProject').click(function() {
 		var dad = $(this).parent().parent();
-		dad.find('input[type="text"]').show().focus();
-        dad.find('#segment').show().focus();
-        dad.find('#type').show().focus();
-        dad.find('#solution').show().focus(); 
-        dad.find('#begindatum').show().focus();
-        dad.find('#nieuwProjectOpslaan').show().focus();
-        dad.find('#nieuwProjectAnnuleren').show().focus();
+			dad.find('#projectInfo').hide();
+			dad.find('td').hide();
+			dad.find('input[type="text"]').show().focus();
+	        dad.find('#segment').show().focus();
+	        dad.find('#type').show().focus();
+	        dad.find('#solution').show().focus(); 
+	        dad.find('#begindatum').show().focus();
+	        dad.find('#nieuwProjectOpslaan').show().focus();
+	        dad.find('#nieuwProjectAnnuleren').show().focus();
 	});
-	$("#nieuwProjectOpslaan").click(function(response) {
+	
+	$("#nieuwProjectOpslaan").click(function() {
 		var datum = $("#begindatum").val();
 		var data = {"project_id": $("#project_id").val(), 
 				"huisnr": $("#huisnr").val(), 
@@ -49,24 +52,23 @@ function projecten(){
 			url:'/firstapp/restservices/project/newProject',
 			data:data,
 			success: function(){
-			    console.log('succes')
+			    console.log('succes');
 			         }
 			     });
 		window.open("http://localhost:4711/firstapp/IPASS/projecten.html","_self");
 	});
 	$("#nieuwProjectAnnuleren").click(function() {
 		window.open("http://localhost:4711/firstapp/IPASS/projecten.html","_self");
-	});
+	})
 	checkAdmin();
 	 $('#loguit').click(function(){
 		 uitloggen();
-	 })
+	 });
 }
 function reloadHome(){
 	window.location = "maps.html";
 }
 function filter(){
-	 // Declare variables 
 	console.log("filter");
 	  var input, filter, table, tr, td, i;
 	  input = document.getElementById("zoek");
@@ -74,7 +76,6 @@ function filter(){
 	  table = document.getElementById("projectInfo");
 	  tr = table.getElementsByTagName("tr");
 	  var nummer = $("#optie").val();
-	  // Loop through all table rows, and hide those who don't match the search query
 	  for (i = 0; i < tr.length; i++) {
 	    td = tr[i].getElementsByTagName("td")[nummer];
 	    if (td) {
@@ -96,7 +97,5 @@ function uitloggen(){
 	localStorage.clear();
 	window.open("http://localhost:4711/firstapp/IPASS/login.html","_self");
 }
-
-
 
 projecten();

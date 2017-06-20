@@ -2,7 +2,7 @@
 	padding-left:200px;
 }
 .projecten{
-	margin-left: 150px;
+	margin-left: 200px;
 	border: 2px solid grey;
     border-radius: 8px;
 }
@@ -24,10 +24,10 @@
 	
 }
 body{
-	background-color:F2EEED;
+	font-family: Verdana,sans-serif;
 }
 .border{
-	margin-left: 150px;
+	margin-left: 200px;
 	border: 2px solid grey;
     border-radius: 8px;
 }
@@ -37,6 +37,25 @@ body{
 }
 .edit-input{
 	 display:none;
+}
+.edit-input-button{
+	display:none;
+	background-color:#1A64B8;
+	border:none;
+	color:white;
+	width:80px;
+	height:32px;
+	margin:10px;
+	border-radius: 8px;
+	transition-duration: 0.4s;
+}
+.edit-input-button:hover{
+	color:white;
+	cursor:pointer;
+	background-color:white;
+	color:#1A64B8;
+	cursor:pointer;
+	border: 2px solid #1A64B8;
 }
 .aanpassen{
 	float:right;
@@ -68,9 +87,10 @@ ul {
     margin: 0;
     padding: 0;
     width: auto;
-    height: 500px; /* Full height */
+    height: auto; /* Full height */
     position:auto; /* Make it stick, even on scroll */
     overflow: hidden; /* Enable scrolling if the sidenav has too much content */
+    border: 1px solid #1A64B8;
     border-radius: 8px;
 }
 li a {
@@ -85,9 +105,7 @@ li a:hover {
     background-color: #1A64B8;
     color: white;
 }
-li a:active {
-    background: #1A64B8;
-}
+
 
 .muis:hover{
 	color:white;

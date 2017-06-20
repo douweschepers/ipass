@@ -16,10 +16,10 @@
 	
 }
 body{
-	background-color:F2EEED;
+	font-family: Verdana,sans-serif;
 }
 .gegevens{
-	margin-left: 150px;
+	margin-left: 200px;
 	border: 2px solid grey;
     border-radius: 8px;
 }
@@ -46,6 +46,26 @@ body{
 .formProject{
 	display:none;
 }
+.formProject-button{
+	display:none;
+	float:right;
+	background-color:#1A64B8;
+	border:none;
+	color:white;
+	width:80px;
+	height:36px;
+	margin-right:10px;
+	border-radius: 8px;
+	transition-duration: 0.4s;
+}
+.formProject-button:hover{
+	color:white;
+	cursor:pointer;
+	background-color:white;
+	color:#1A64B8;
+	cursor:pointer;
+	border: 2px solid #1A64B8;
+}
 .letter{
 	 padding-right: 50px;
 }
@@ -65,10 +85,11 @@ ul {
     margin: 0;
     padding: 0;
     width: auto;
-    height: 100%; /* Full height */
+    height: auto; /* Full height */
     position:auto; /* Make it stick, even on scroll */
     overflow: auto; /* Enable scrolling if the sidenav has too much content */
     border-radius: 8px;
+    border: 1px solid #1A64B8;
 }
 li a {
     display: block;
