@@ -106,7 +106,7 @@ public class MedewerkerDAO extends BaseDAO{
 		}
 		return result;
 	}
-	/*public String findRolForUsernameAndPassword(String username, String password) {
+	public String findRolForUsernameAndPassword(String username, String password) {
 		 String rol = null;
 		 String query = "SELECT rol FROM medewerkers WHERE gebruikersnaam = ? AND wachtwoord = ?";
 
@@ -125,7 +125,7 @@ public class MedewerkerDAO extends BaseDAO{
 
 		 return rol;
 		 }
-*/
+
 		
 }
 
