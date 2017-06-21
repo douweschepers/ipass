@@ -15,6 +15,11 @@ body{
 	border: 2px solid grey;
     border-radius: 8px;
 }
+.border-admin{
+	margin-left: 250px;
+	border: 2px solid grey;
+    border-radius: 8px;
+}
 
 .uitloggen{
 	float:right;

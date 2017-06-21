@@ -32,9 +32,9 @@ function codeAddress(longlat,lijst) {
         position: longlat
     });
     
-	marker.addListener('click', function() {
+	/*marker.addListener('click', function() {
 	    infowindow.open(map, marker);
-	  });   
+	  });   */
 	
   }
 
@@ -70,6 +70,8 @@ function checkAdmin(){
 	rol = localStorage.getItem("rol");
 	if(rol== "admin"){
 		$('#verw').show();
+		$("#persoonsgegevens").attr('class', 'border-admin');
+		$("#projecten").attr('class', 'border-admin');
 	};
 }
 function uitloggen(){

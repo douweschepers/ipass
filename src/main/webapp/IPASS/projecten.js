@@ -90,6 +90,8 @@ function checkAdmin(){
 	rol = localStorage.getItem("rol");
 	if(rol== "admin"){
 		$('#verw').show();
+		$("#persoonsgegevens").attr('class', 'border-admin');
+		$("#projecten").attr('class', 'border-admin');
 	};
 }
 function uitloggen(){
