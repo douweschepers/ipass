@@ -44,7 +44,7 @@ function getAdress(){
 	var straat = undefined;
 	var huisnummer = undefined;
 	var adres= undefined;
-	$.getJSON("http://localhost:4711/firstapp/restservices/project/", function(data) {
+	$.getJSON("/restservices/project/", function(data) {
 		$(data).each(function( index_pjct , value_pjct ) {
 			lijst.push(value_pjct.project_id);
 			straat = value_pjct.straatnaam
@@ -76,5 +76,5 @@ function checkAdmin(){
 }
 function uitloggen(){
 	localStorage.clear();
-	window.open("http://localhost:4711/firstapp/IPASS/login.html","_self");
+	window.open("/login.html","_self");
 }

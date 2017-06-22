@@ -1,7 +1,7 @@
 function projecten(){
 	med_id_storage = localStorage.getItem("medewerkers_id");
 
-	$.getJSON("http://localhost:4711/firstapp/restservices/medewerker", function(data) {
+	$.getJSON("/restservices/medewerker", function(data) {
 		var array = [];
 		$(data).each(function( index_med , value_med ) {	
 			array.push(value_med.medewerkers_id);
@@ -28,7 +28,7 @@ function verwijderen(index,value, array){
 	
 	$('#delete'+index).click(function() {
 		
-		var uri = "/firstapp/restservices/medewerker/" + value;
+		var uri = "/restservices/medewerker/" + value;
 		
 		$.ajax(uri, {
 			type: "delete",
@@ -45,7 +45,7 @@ function verwijderen(index,value, array){
 }
 function checkForProject(med_id, array){
 	var lijst = []
-	$.getJSON("http://localhost:4711/firstapp/restservices/project", function(data) {
+	$.getJSON("/restservices/project", function(data) {
 		$(data).each(function( index_pjct , value_pjct) {	
 			lijst.push(value_pjct.projectNaam)
 			if(med_id == value_pjct.medewerkers_id){
@@ -99,7 +99,7 @@ function checkAdmin(){
 }
 function uitloggen(){
 	localStorage.clear();
-	window.open("http://localhost:4711/firstapp/IPASS/login.html","_self");
+	window.open("/login.html","_self");
 }
 
 projecten();

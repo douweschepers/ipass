@@ -1,6 +1,6 @@
 function projecten(){
 	med_id = localStorage.getItem("medewerkers_id");
-	$.getJSON("http://localhost:4711/firstapp/restservices/project", function(data) {
+	$.getJSON("/restservices/project", function(data) {
 		$(data).each(function( index_pjct , value_pjct ) {
 			if(value_pjct.medewerkers_id == med_id && value_pjct.status=="actief"){
 				$('#projecten').append('<tr id="rows'+index_pjct+'">' +
@@ -33,7 +33,7 @@ function checkAdmin(){
 function afronden_project(project_id){
 
 		 console.log(med_id);
-		 var uri = "/firstapp/restservices/project/status/" + project_id;
+		 var uri = "/restservices/project/status/" + project_id;
 		 var data = {"status": "afgerond"};
 		 $.ajax(uri, {
 			 type: "put",
@@ -42,7 +42,7 @@ function afronden_project(project_id){
 				 console.log("afgerond");
 			 }
 		 });
-		 window.open("http://localhost:4711/firstapp/IPASS/afronden.html","_self");
+		 window.open("/afronden.html","_self");
 
 }
 projecten();

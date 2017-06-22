@@ -7,7 +7,7 @@ function gegevens(){
 	console.log(med_id);
 	lijst = [];
 	var select = document.getElementById("huidige_projecten");
-	$.getJSON("http://localhost:4711/firstapp/restservices/medewerker/"+med_id, function(data) {
+	$.getJSON("/restservices/medewerker/"+med_id, function(data) {
 		$(data).each(function( index_med , value_med ) {
 			document.querySelector('#voornaam').innerHTML = value_med.voornaam;
 			document.querySelector('#achternaam').innerHTML = value_med.achternaam;
@@ -16,7 +16,7 @@ function gegevens(){
 			document.querySelector('#med_id').innerHTML = value_med.medewerkers_id;
 		});
 	});
-	$.getJSON("http://localhost:4711/firstapp/restservices/project", function(data) {
+	$.getJSON("/restservices/project", function(data) {
 		$(data).each(function( index_pjct , value_pjct ) {
 			if(value_pjct.medewerkers_id == med_id){
 				lijst.push(value_pjct.projectNaam);				
@@ -38,7 +38,7 @@ function gegevens(){
 	
  $('#opslaan').click(function(){
 	 console.log(med_id);
-	 var uri = "/firstapp/restservices/medewerker/" + med_id;
+	 var uri = "/restservices/medewerker/" + med_id;
 	 $.ajax(uri, {
 		 type: "put",
 		 data: $("#updateCustomerForm").serialize(),
@@ -49,10 +49,10 @@ function gegevens(){
 			 console.log("Could not update customer!");
 	 }
 	 });
-	 window.open("http://localhost:4711/firstapp/IPASS/persoonsgegevens.html","_self");
+	 window.open("/persoonsgegevens.html","_self");
 	 });
  $('#annuleren').click(function(){
-	 window.open("http://localhost:4711/firstapp/IPASS/persoonsgegevens.html","_self");
+	 window.open("/persoonsgegevens.html","_self");
  });
  checkAdmin()
  
@@ -70,7 +70,7 @@ function checkAdmin(){
 }
 function uitloggen(){
 	localStorage.clear();
-	window.open("http://localhost:4711/firstapp/IPASS/login.html","_self");
+	window.open("/login.html","_self");
 }
 gegevens();
 

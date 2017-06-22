@@ -2,7 +2,7 @@ function projecten(){
 	med_id = localStorage.getItem("medewerkers_id");
 	lijst = [];
 	var select = document.getElementById("collapse");
-	$.getJSON("http://localhost:4711/firstapp/restservices/project", function(data) {
+	$.getJSON("/restservices/project", function(data) {
 		$(data).each(function( index_pjct , value_pjct ) {
 			if(value_pjct.medewerkers_id == med_id){
 				$('#projecten').append('<tr id="rows'+index_pjct+'">' +
@@ -49,16 +49,16 @@ function projecten(){
 		console.log(data);
 		$.ajax({
 			type: 'POST',    
-			url:'/firstapp/restservices/project/newProject',
+			url:'/restservices/project/newProject',
 			data:data,
 			success: function(){
 			    console.log('succes');
 			         }
 			     });
-		window.open("http://localhost:4711/firstapp/IPASS/projecten.html","_self");
+		window.open("/projecten.html","_self");
 	});
 	$("#nieuwProjectAnnuleren").click(function() {
-		window.open("http://localhost:4711/firstapp/IPASS/projecten.html","_self");
+		window.open("/projecten.html","_self");
 	})
 	checkAdmin();
 	 $('#loguit').click(function(){
@@ -96,7 +96,7 @@ function checkAdmin(){
 }
 function uitloggen(){
 	localStorage.clear();
-	window.open("http://localhost:4711/firstapp/IPASS/login.html","_self");
+	window.open("/login.html","_self");
 }
 
 projecten();
