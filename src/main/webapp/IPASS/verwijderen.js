@@ -53,42 +53,8 @@ function checkForProject(med_id, array){
 			}
 		})
 	})
-}/*
-function veranderForeignKey(med_id, array){	
-	$('#pasAan').show();
-	console.log(med_id);
-	
-	med_id_storage = localStorage.getItem("medewerkers_id");
-	var myDiv = document.getElementById("pasAan");
-	var selectList = document.createElement("select");
-	selectList.id = "mySelect";
-	myDiv.appendChild(selectList);
-	
-	
-	
-	for (var i = 0; i < array.length; i++) {
-		if(med_id!=i){
-		var option = document.createElement("option");
-	    option.value = array[i];
-	    option.text = array[i];
-	    selectList.appendChild(option);
-		}
-	}; 
-	
-	
-	
-	var uri = "/firstapp/restservices/project/" + med_id;
-	 $.ajax(uri, {
-		 type: "put",
-		 data: $("#updateMedId").serialize(),
-		 success: function() {
-			 console.log("medewerkers ID aangepast!");
-		 },
-		 error: function() {
-			 console.log("niet aangepast!");
-	 }
-	 });
-};*/
+}
+
 function checkAdmin(){
 	rol = localStorage.getItem("rol");
 	 if(rol== "admin"){
@@ -99,7 +65,7 @@ function checkAdmin(){
 }
 function uitloggen(){
 	localStorage.clear();
-	window.open("/login.html","_self");
+	window.open("/IPASS/login.html","_self");
 }
 
 projecten();

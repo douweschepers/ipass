@@ -48,4 +48,8 @@ function afronden_project(project_id){
 		 window.open("/afronden.html","_self");
 
 }
+function uitloggen(){
+	localStorage.clear();
+	window.open("/IPASS/login.html","_self");
+}
 projecten();

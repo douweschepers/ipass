@@ -70,7 +70,7 @@ function checkAdmin(){
 }
 function uitloggen(){
 	localStorage.clear();
-	window.open("/login.html","_self");
+	window.open("/IPASS/login.html","_self");
 }
 gegevens();
 
