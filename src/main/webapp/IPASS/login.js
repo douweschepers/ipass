@@ -1,5 +1,5 @@
 function login(){
-	$.getJSON("/restservices/medewerker/", function(data) {
+	$.getJSON("https://***.herokuapp.com:443/restservices/medewerker/", function(data) {
 		$(data).each(function( index , value ) {
 			var username = $('#username').val();
 			var password = $('#password').val();
