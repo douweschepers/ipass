@@ -19,6 +19,9 @@ function projecten(){
 		});
 	});
 	checkAdmin();
+	 $('#loguit').click(function(){
+		 uitloggen();
+	 })
 
 }
 function checkAdmin(){

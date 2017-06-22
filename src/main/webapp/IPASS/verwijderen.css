@@ -20,6 +20,15 @@ ul {
 	color:white;
 	width:68px;
 	height:32px;
+	border-radius: 8px;
+	transition-duration: 
+}
+.uitloggen:hover{
+	background-color:white;
+	color:#1A64B8;
+	cursor:pointer;
+	border: 2px solid #1A64B8;
+	
 }
 li a {
     display: block;
