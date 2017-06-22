@@ -7,7 +7,7 @@ function login(){
 				if(password ==value.wachtwoord){
 					localStorage.setItem("medewerkers_id", value.medewerkers_id);
 					localStorage.setItem("rol", value.rol);
-					window.open("persoonsgegevens.html","_self");
+					window.open("/persoonsgegevens.html","_self");
 				}
 				else{
 					alert("Gebruikersnaam/wachtwoord komen niet overeen!");
