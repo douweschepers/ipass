@@ -1,6 +1,7 @@
 package nl.hu.v1wac.firstapp.model;
 
 public class Medewerker {
+	// zet de variable die ik gebruik
 	private int medewerkerID;
 	private int huisNummer;
 	private String straatNaam;
@@ -10,6 +11,7 @@ public class Medewerker {
 	private int ProjectID;
 	private String gebruikersNaam;
 	private String wachtwoord;
+	//de constructor
 	public Medewerker(int medewerkerID, int huisNummer, String straatNaam, String voornaam, String achternaam,
 			String rol, int projectID, String gebruikersNaam, String wachtwoord) {
 		super();
@@ -23,6 +25,7 @@ public class Medewerker {
 		this.gebruikersNaam = gebruikersNaam;
 		this.wachtwoord = wachtwoord;
 	}
+	//de getters en setters
 	public int getMedewerkerID() {
 		return medewerkerID;
 	}

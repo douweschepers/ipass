@@ -2,8 +2,10 @@ function projecten(){
 	med_id = localStorage.getItem("medewerkers_id");
 	lijst = [];
 	var select = document.getElementById("collapse");
+	//laad alle project in
 	$.getJSON("/restservices/project", function(data) {
 		$(data).each(function( index_pjct , value_pjct ) {
+			//kijk welke projecten gelijk staan aan de medewerkers_id van de gebruiker
 			if(value_pjct.medewerkers_id == med_id){
 				$('#projecten').append('<tr id="rows'+index_pjct+'">' +
 						'<td>' + value_pjct.projectNaam + '</td>'+ 
@@ -18,6 +20,7 @@ function projecten(){
 			}
 		});
 	});
+	//als op nieuw project geklikt word laat dan de invoervelden zien
 	$('#nieuwProject').click(function() {
 		var dad = $(this).parent().parent();
 			dad.find('#projectInfo').hide();
@@ -31,9 +34,10 @@ function projecten(){
 	        dad.find('#nieuwProjectAnnuleren').show().focus();
 	        dad.find('#status').show().focus();
 	});
-	
+	// bij opslaan maak de ajax call
 	$("#nieuwProjectOpslaan").click(function() {
 		var datum = $("#begindatum").val();
+		//geen serialize omdat er verschillende soorten invoer velden zijn
 		var data = {"project_id": $("#project_id").val(), 
 				"huisnr": $("#huisnr").val(), 
 				"straatnaam": $("#straatnaam").val(),
@@ -65,27 +69,11 @@ function projecten(){
 		 uitloggen();
 	 });
 }
+// als op logo geklikt word herlaad dan de maps
 function reloadHome(){
 	window.location = "maps.html";
 }
-function filter(){
-	  var input, filter1, table, tr, td, i;
-	  input = document.getElementById("zoek");
-	  filter1 = input.value.toUpperCase();
-	  table = document.getElementById("projectInfo");
-	  tr = table.getElementsByTagName("tr");
-	  var nummer = $("#optie").val();
-	  for (i = 0; i < tr.length; i++) {
-	    td = tr[i].getElementsByTagName("td")[nummer];
-	    if (td) {
-	      if (td.innerHTML.toUpperCase().indexOf(filter1) > -1) {
-	        tr[i].style.display = "";
-	      } else {
-	        tr[i].style.display = "none";
-	      }
-	    } 
-	  }
-}
+//check of gebruiker admin is zo ja laat dan ook delete medewerker zien
 function checkAdmin(){
 	rol = localStorage.getItem("rol");
 	if(rol== "admin"){
@@ -94,9 +82,10 @@ function checkAdmin(){
 		$("#projecten").attr('class', 'border-admin');
 	};
 }
+//als word uitgelogd clear de localstorage en ga naar inlog scherm
 function uitloggen(){
 	localStorage.clear();
-	window.open("/login.html","_self");
+	window.open("/IPASS/login.html","_self");
 }
 
 projecten();

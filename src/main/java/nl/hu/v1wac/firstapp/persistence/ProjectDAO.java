@@ -14,6 +14,7 @@ import nl.hu.v1wac.firstapp.model.Medewerker;
 import nl.hu.v1wac.firstapp.model.Project;
 
 public class ProjectDAO extends BaseDAO{
+	//functie om nieuw project toe te voegen en query naar DB te sturen
 	public Project save(Project project) throws ParseException{
 	
 		
@@ -41,7 +42,7 @@ public class ProjectDAO extends BaseDAO{
 	        return findByID(project.getProjectID());
 	}
 	
-
+	//functie voor findall en query naar db sturen
 	public List<Project> findAll(){
 		List<Project> results = new ArrayList<Project>();
 		try(Connection con = super.getConnection()){
@@ -64,11 +65,14 @@ public class ProjectDAO extends BaseDAO{
 		        results.add(newProject);
 		      }
 	
-		}catch (SQLException sqle){
+		}
+		//catch alle errors en print deze
+		catch (SQLException sqle){
 			sqle.printStackTrace();
 		}
 		return results;
 	}
+	//functie voor findbyID en query naar db te sturen
 	public Project findByID(int i){
 		Project newProject = null;
 		try(Connection con = super.getConnection()){
@@ -94,6 +98,7 @@ public class ProjectDAO extends BaseDAO{
 		}
 		return newProject;
 		}
+	//functie om medewerkersId te vinden met project id en query naar db te sturen
 	public Project findByMedID(String ID){
 		Project newProject = null;
 		try(Connection con = super.getConnection()){
@@ -119,17 +124,21 @@ public class ProjectDAO extends BaseDAO{
 		}
 		return newProject;
 		}
+	//functie om project te update en query naar DB te sturen
 	public Project update(Project project){
 		String query = "update projects set medewerkers_id="+project.getMedewerkersID()+";";
 		try (Connection con = super.getConnection()){
             Statement stmt = con.createStatement();
             stmt.executeUpdate(query);
-        } catch (SQLException e) {
+        }
+		//catch alle erros en print die
+		catch (SQLException e) {
         	System.out.println("DB connection: failed");
             e.printStackTrace();
         }
          return findByID(project.getProjectID());
     }
+	//functie om de status te updaten als er op afgerond word geklikt
 	public Project updateStatus(Project project){
 		String query = "update projects set status ='" + "afgerond' where project_id=" + project.getProjectID()+";" ;
 		try (Connection con = super.getConnection()){

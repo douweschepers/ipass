@@ -22,8 +22,10 @@ import javax.ws.rs.core.Response;
 import nl.hu.v1wac.firstapp.model.Medewerker;
 import nl.hu.v1wac.firstapp.model.Project;
 
+//het pad om naar deze classe te komen
 @Path("/project")
 public class ProjectResource {
+	//één functie om een project naar json te zetten
 	private JsonObjectBuilder projectToJson(Project p){
         JsonObjectBuilder job = Json.createObjectBuilder();
         job.add("project_id", p.getProjectID())
@@ -39,7 +41,7 @@ public class ProjectResource {
 	    .add("status", p.getStatus());
         return job;
     }	
-	
+	//de get methode om een project op te roepen
 		@GET
 		@Produces("application/json")
 		public String getProject(){
@@ -66,7 +68,7 @@ public class ProjectResource {
 			JsonArray array = jab.build();
 			return array.toString();
 		}
-		
+		// de get methode om een project op te roepen via het projectID
 		@GET
 		@Path("{id}")
 		@Produces("application/json")
@@ -91,7 +93,7 @@ public class ProjectResource {
 							
 			return job.build().toString();
 		}
-		
+		// de methode om een project toe te voegen met eigen pad voor zekerheid
 	    @POST
 	    @Path("/newProject")
 	    public Response addProject(@FormParam("project_id") int project_id,
@@ -120,6 +122,7 @@ public class ProjectResource {
 	            return Response.status(Response.Status.FOUND).build();
  	       }
 	    }
+	    //methode omproject te update 
 	    @PUT
 		@Path("{id}")
 		@Produces("application/json")
@@ -135,9 +138,10 @@ public class ProjectResource {
 				return Response.ok(a).build();
 			}
 			
-			throw new WebApplicationException("Country not found!");
+			throw new WebApplicationException("Project not found!");
 			
 		}
+	    //methode om status van project te update als op afgerond word gezet
 	    @PUT
 		@Path("/status/{id}")
 		@Produces("application/json")

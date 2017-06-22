@@ -3,6 +3,7 @@ package nl.hu.v1wac.firstapp.model;
 import java.util.Date;
 
 public class Project {
+	//zet de variable die je gebruikt
 	private int projectID;
 	private int huisNummer;
 	private String straatnaam;
@@ -15,7 +16,7 @@ public class Project {
 	private String projectNaam;
 	private String status;
 	
-	
+	//constructor
 	public Project(int projectID, int huisNummer, String straatnaam, String segment, String type, String solution,
 			int telefoonNummer, int medewerkersID, String begindatum, String projectNaam, String status) {
 		super();
@@ -31,6 +32,7 @@ public class Project {
 		this.projectNaam = projectNaam;
 		this.status = status;
 	}
+	//getters en setters
 	public int getProjectID() {
 		return projectID;
 	}

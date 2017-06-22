@@ -7,6 +7,7 @@ import nl.hu.v1wac.firstapp.model.Medewerker;
 import nl.hu.v1wac.firstapp.model.Project;
 import nl.hu.v1wac.firstapp.persistence.ProjectDAO;
 
+// een classe die alle resource methodes aan kan roepen
 public class ProjectService {
 	ProjectDAO ProjectDAO = new ProjectDAO();
 	

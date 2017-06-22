@@ -19,22 +19,23 @@ import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.impl.crypto.MacProvider;
 import nl.hu.v1wac.firstapp.persistence.MedewerkerDAO;
 
+//het pad voor de url om deze classe te vinden
 @Path("/authentication")
 public class AuthenticationResource {
 	final static public Key key = MacProvider.generateKey();
 	
+	//post methode om iets te update (het token)
 	 @POST
 	 @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
 	 public Response authenticateUser(@FormParam("username") String username,
 			 						  @FormParam("password") String password) {
 	 try {
-	 // Authenticate the user against the database
+	 // maak verbinding met DAO
 	 MedewerkerDAO dao = new MedewerkerDAO();
 	 String rol = dao.findRolForUsernameAndPassword(username, password);
 
 	 if (rol == null) { throw new IllegalArgumentException("No user found!"); }
 
-	 // Issue a token for the user
 	 Calendar expiration = Calendar.getInstance();
 	 expiration.add(Calendar.MINUTE, 30);
 	 
@@ -46,18 +47,10 @@ public class AuthenticationResource {
 	 .setExpiration(expiration.getTime())
 	 .signWith(SignatureAlgorithm.HS512, key)
 	 .compact();
-	 // Return the token on the response
+	 // return de token
 	 return Response.ok(token).build();
 		 } catch (JwtException |IllegalArgumentException e) {
 		 return Response.status(Response.Status.UNAUTHORIZED).build();
 		 }
-	 }
-
-	 @GET
-	 @Path("/test")
-	 public String getTest(){
-		 JsonObjectBuilder job = Json.createObjectBuilder();
-		 job.add("a","a");
-		 return job.build().toString();
 	 }
 }

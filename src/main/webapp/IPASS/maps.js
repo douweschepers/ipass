@@ -3,18 +3,20 @@ var geocoder;
 
 
 function loadMap(){
+	//laad de googlemaps api in
 	map = new google.maps.Map(document.getElementById('map'), {
 	      zoom: 8,
+	      //centreer op utrecht
 	      center: {lat:52.090737,lng:5.121420}
 	    });
     
     checkAdmin();
-    $('#adres').click(function(){})
     $('#loguit').click(function(){
    	 uitloggen();
     })
     getAdress()
 }
+//functie om alle longitudes en lattitudes toe te voegen als pins op de map
 function codeAddress(longlat,lijst) {
 	var contentString= undefined;
 	for(var i =0; i< lijst.length;i++){
@@ -32,13 +34,10 @@ function codeAddress(longlat,lijst) {
         position: longlat
     });
     
-	/*marker.addListener('click', function() {
-	    infowindow.open(map, marker);
-	  });   */
 	
   }
 
-
+//functie die uit me restservice alle longitude en latitudes haalt
 function getAdress(){
 	var lijst= []
 	var straat = undefined;
@@ -54,6 +53,7 @@ function getAdress(){
 		});
 	});
 }
+//functie geocoding, google maps zet adres om in latitude longitude
 function getLatLon(adres,lijst){
 	$.getJSON("https://maps.googleapis.com/maps/api/geocode/json?address="+ adres+"&key=AIzaSyA2hhwsyvOFvwf6YJABI74dDS8ccSyGvf8", function(data) {
 		$(data).each(function( index_pjct , value_pjct ) {
@@ -63,9 +63,11 @@ function getLatLon(adres,lijst){
 		});
 	});
 }
+//als er op het logo word geklikt ga dan terug naar de maps
 function reloadHome(){
 	window.location = "maps.html";
 }
+//kijk of de gebruiker admin is als zo is voeg dan delete medewerker toe
 function checkAdmin(){
 	rol = localStorage.getItem("rol");
 	if(rol== "admin"){
@@ -74,6 +76,7 @@ function checkAdmin(){
 		$("#projecten").attr('class', 'border-admin');
 	};
 }
+//als op loguit geklikt word clear localstorage en ga naar inlog scherm
 function uitloggen(){
 	localStorage.clear();
 	window.open("/IPASS/login.html","_self");

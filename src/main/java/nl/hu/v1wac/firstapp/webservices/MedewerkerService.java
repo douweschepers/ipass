@@ -6,6 +6,7 @@ import nl.hu.v1wac.firstapp.model.Country;
 import nl.hu.v1wac.firstapp.model.Medewerker;
 import nl.hu.v1wac.firstapp.persistence.MedewerkerDAO;
 
+//alle resource functies lopen via hier
 public class MedewerkerService {
 	MedewerkerDAO Medewerker = new MedewerkerDAO();
 	

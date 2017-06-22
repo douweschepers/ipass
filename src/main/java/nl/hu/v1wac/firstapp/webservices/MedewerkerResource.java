@@ -20,11 +20,11 @@ import javax.ws.rs.core.Response;
 import nl.hu.v1wac.firstapp.model.Medewerker;
 
 
-
+//het pad om naar deze classe te komen
 @Path("/medewerker")
 public class MedewerkerResource {
 	
-
+	//één functie om een medewerker naar json te zetten
 	private JsonObjectBuilder medewerkerToJson(Medewerker m){
 		  JsonObjectBuilder job = Json.createObjectBuilder();
 			job.add("medewerkers_id", m.getMedewerkerID())
@@ -38,7 +38,7 @@ public class MedewerkerResource {
 		    .add("wachtwoord", m.getWachtwoord());
 		  return job;
 		 }
-	
+	//get request methode voor een medewerker opvragen
 	@GET
 	@Produces("application/json")
 	public String getMedewerker(){
@@ -61,6 +61,7 @@ public class MedewerkerResource {
 		JsonArray array = jab.build();
 		return array.toString();
 	}
+	//get request met medewerkersid
 	@GET
 	@Path("{id}")
 	@Produces("application/json")
@@ -78,9 +79,10 @@ public class MedewerkerResource {
 	    .add("project_id", m.getProjectID())
 	    .add("gebruikersnaam", m.getGebruikersNaam())
 	    .add("wachtwoord", m.getWachtwoord());
-						
+		//return json 
 		return job.build().toString();
 	}
+	//functie om gegevens te updaten
 	@PUT
 	@Path("{id}")
 	@Produces("application/json")
@@ -106,6 +108,7 @@ public class MedewerkerResource {
 		throw new WebApplicationException("Country not found!");
 		
 	}
+	//functie om medewerker te deleten
 	@DELETE
 	@Path("{id}")
 	public void deleteMedewerker(@PathParam("id") int id) {	
